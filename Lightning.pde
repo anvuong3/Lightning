@@ -1,7 +1,7 @@
-int startX = 0;
-int startY = 150;
+int startX = 250;
+int startY = 350;
 int endX = 0;
-int endY = 150;
+int endY = 500;
 boolean start = false;
 int textColor = 0;
 boolean move = false;
@@ -34,16 +34,33 @@ void draw()
   stroke(0,0,0,5);
   rect(0,0,500,500,0);
   fill(255);
-  if(start == true){
-  	ellipse(x, y, 50, 50);
+  if(start == true && move == true){
+  	strokeWeight(5);
+	  stroke(255, random(255), 255);
+	  endX=startX + (int)random(-25, 25);
+	  endY= startY +(int)random(0, 25);
+	  line(startX, startY, endX, endY);
+	  startX = endX;
+	  startY = endY;
+	  if (endY >=500){
+	  	move = false;
+	  	startX = 250;
+	  	startY = 0;
+	  }
   }
   if(move == true){
-	x+=1;
-	if(x >= 500){
-		x = 0;
-		ymove = true;
-		move = false;
-	}
+  	//   stroke(random(255), 255, 255);
+  	// endX=startX + random(-9, 9);
+  	// endY= startY +random(0, 9);
+  	// line(startX, startY, endX, endY);
+  	// startX= endX;
+  	// startY= endY;
+	// x+=1;
+	// if(x >= 500){
+	// 	x = 0;
+	// 	ymove = true;
+	// 	move = false;
+	// }
   if(ymove == true){
 
 		y+=1;
