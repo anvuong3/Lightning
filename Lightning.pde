@@ -28,15 +28,22 @@ void draw()
   	}
 
   	fill(255,textColor,255);
-  	text("Click to Start\n            \nClick Again \nMake a \nSpider Web", 250, 100);
+  	text("Click to Start\n            \nClick Again \nMake \nLightning", 250, 100);
   }
   fill(0,0,0,8);
   stroke(0,0,0,5);
   rect(0,0,500,500,0);
   fill(255);
+
   if(start == true && move == true){
+  		ellipse(106,88, 135,135);
+	ellipse(55,150, 87,87);
+	ellipse(198, 107, 87,87);
+	ellipse(228,135, 116, 116);
+	ellipse(106,185, 100, 100);
+	ellipse(167,164, 123, 123);
   	strokeWeight(5);
-	  stroke(255, random(255), 255);
+	  stroke(random(180), 255, 255);
 	  endX=startX + (int)random(-25, 25);
 	  endY= startY +(int)random(0, 25);
 	  line(startX, startY, endX, endY);
@@ -44,6 +51,7 @@ void draw()
 	  startY = endY;
 	  if (endY >=500){
 	  	move = false;
+	  	background(255, 255, 0);
 	  	startX = 250;
 	  	startY = 0;
 	  }
