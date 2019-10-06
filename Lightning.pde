@@ -100,7 +100,7 @@ void draw()
 void mousePressed()
 {
   if(endY > 450){
-  file.play();
+  // file.play();
   }
 	if(start == false){
 		start = true;
