@@ -32,7 +32,6 @@ void draw()
   	textColor+=5;
   	if(textColor > 255){
   		textColor = 0;
-  		delay(500);
   	}
 
   	fill(255,textColor,255);
@@ -74,7 +73,6 @@ void draw()
   }
   if(start == true && move == false){
   thunders = true;
-    delay(30);
           ellipse(106+115,88-20, 135,135);
   ellipse(55+115,130-50, 87,87);
   ellipse(198+115, 107-50, 87,87);
