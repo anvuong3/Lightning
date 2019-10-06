@@ -1,3 +1,7 @@
+import processing.sound.*;
+SoundFile file;
+String thunder = "thunder.wav";
+String path;
 int startX = 250;
 int startY = 350;
 int endX = 0;
@@ -8,10 +12,14 @@ boolean move = false;
 boolean ymove = false;
 int y = 0;
 int x = 0;
+boolean thunders = false;
+
 
 void setup()
 {
   size(500,500);
+    path = sketchPath(thunder);
+    file = new SoundFile(this, path);
 
 }
 void draw()
@@ -36,12 +44,13 @@ void draw()
   fill(255);
 
   if(start == true && move == true){
-  		ellipse(106,88, 135,135);
-	ellipse(55,150, 87,87);
-	ellipse(198, 107, 87,87);
-	ellipse(228,135, 116, 116);
-	ellipse(106,185, 100, 100);
-	ellipse(167,164, 123, 123);
+
+      ellipse(106+115,88-20, 135,135);
+  ellipse(55+115,130-50, 87,87);
+  ellipse(198+115, 107-50, 87,87);
+  ellipse(228+115,135-50, 116, 116);
+  ellipse(106+115,185-50, 100, 100);
+  ellipse(167+115,164-50, 123, 123);
   	strokeWeight(5);
 	  stroke(random(180), 255, 255);
 	  endX=startX + (int)random(-25, 25);
@@ -52,11 +61,27 @@ void draw()
 	  if (endY >=500){
 	  	move = false;
 	  	background(255, 255, 0);
+      ellipse(106+115,88-20, 135,135);
+  ellipse(55+115,130-50, 87,87);
+  ellipse(198+115, 107-50, 87,87);
+  ellipse(228+115,135-50, 116, 116);
+  ellipse(106+115,185-50, 100, 100);
+  ellipse(167+115,164-50, 123, 123);
 	  	startX = 250;
-	  	startY = 0;
+	  	startY = 150;
 	  }
+
   }
-  if(move == true){
+  if(start == true && move == false){
+  thunders = true;
+    delay(30);
+          ellipse(106+115,88-20, 135,135);
+  ellipse(55+115,130-50, 87,87);
+  ellipse(198+115, 107-50, 87,87);
+  ellipse(228+115,135-50, 116, 116);
+  ellipse(106+115,185-50, 100, 100);
+  ellipse(167+115,164-50, 123, 123);
+ 
   	//   stroke(random(255), 255, 255);
   	// endX=startX + random(-9, 9);
   	// endY= startY +random(0, 9);
@@ -69,6 +94,7 @@ void draw()
 	// 	ymove = true;
 	// 	move = false;
 	// }
+
   if(ymove == true){
 
 		y+=1;
@@ -82,13 +108,30 @@ void draw()
 
 void mousePressed()
 {
+  if(endY > 450){
+  file.play();
+  }
 	if(start == false){
 		start = true;
 	}
 	if(start == true){
 		if(move == false){
+
 			move = true;
+      
 		}
+
+
 	}
+
+
 }
 
+void keyPressed() {
+    if(start == true){
+      start = false;
+    }else if(start ==false){
+      start = true;
+    }
+ 
+}
