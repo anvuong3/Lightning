@@ -94,16 +94,7 @@ void draw()
 	// 	ymove = true;
 	// 	move = false;
 	// }
-
-  if(ymove == true){
-
-		y+=1;
-		if(y >= 500){
-			y = 0;
-			ymove = false;
-		}
 	}
-}
 }
 
 void mousePressed()
@@ -120,11 +111,7 @@ void mousePressed()
 			move = true;
       
 		}
-
-
 	}
-
-
 }
 
 void keyPressed() {
