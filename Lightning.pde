@@ -1,4 +1,4 @@
-import processing.sound.*;
+
 SoundFile file;
 String thunder = "thunder.wav";
 String path;
@@ -18,8 +18,8 @@ boolean thunders = false;
 void setup()
 {
   size(500,500);
-    path = sketchPath(thunder);
-    file = new SoundFile(this, path);
+    // path = sketchPath(thunder);
+    // file = new SoundFile(this, path);
 
 }
 void draw()
