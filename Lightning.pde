@@ -1,4 +1,4 @@
-
+import processing.sound.*;
 SoundFile file;
 String thunder = "thunder.wav";
 String path;
